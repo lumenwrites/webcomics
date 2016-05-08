@@ -73,7 +73,7 @@ class BrowseView(BrowseMixin, ListView):
 
     def get_queryset(self):
         qs = super(BrowseView, self).get_queryset()        
-        qs = [post for post in qs if (post.author.hidden == False and video.published==True)]
+        qs = [post for post in qs if (post.published==True)]
 
         return qs
     
