@@ -70,6 +70,12 @@ class BrowseView(BrowseMixin, ListView):
     model = Post
     template_name = "posts/browse.html"    
     
+
+    def get_queryset(self):
+        qs = super(BrowseView, self).get_queryset()        
+        qs = [post for post in qs if (post.author.hidden == False and video.published==True)]
+
+        return qs
     
 
 class SubscriptionsView(BrowseMixin, ListView):
