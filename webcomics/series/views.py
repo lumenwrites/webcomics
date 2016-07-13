@@ -30,7 +30,11 @@ class SeriesView(BrowseMixin, ListView):
         qs = sorted(qs, key=lambda x: x.pub_date, reverse=False)
         # qs.reverse()
         # Filter Posts
-        series = Series.objects.get(slug=self.kwargs['slug'])
+        if self.request.META['HTTP_HOST'] == "orangemind.webcomics.io":
+            series = Series.objects.get(slug="orangemind")
+        else:
+            series = Series.objects.get(slug=self.kwargs['slug'])
+            
         qs = [post for post in qs if post.series == series]
 
         return qs
