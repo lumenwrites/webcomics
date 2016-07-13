@@ -3,7 +3,7 @@
 
 {% block content %}
 
-{% if series.slug == "orangemind" %}
+{% if request.META.HTTP_HOST == "orangemind.webcomics.io" %}  
 {% include "series/orangemind-subheader.html" %}
 {% else  %}
 {% include "series/subheader.html" %}
