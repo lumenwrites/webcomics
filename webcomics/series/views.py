@@ -42,7 +42,11 @@ class SeriesView(BrowseMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super(SeriesView, self).get_context_data(**kwargs)
 
-        series = Series.objects.get(slug=self.kwargs['slug'])        
+        if self.request.META['HTTP_HOST'] == "orangemind.webcomics.io":
+            series = Series.objects.get(slug="orangemind")
+        else:
+            series = Series.objects.get(slug=self.kwargs['slug'])
+            
         context['series'] = series
 
         view_count = 0
