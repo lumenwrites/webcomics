@@ -27,7 +27,7 @@ class SeriesView(BrowseMixin, ListView):
     
     def get_queryset(self):
         qs = super(SeriesView, self).get_queryset()
-        qs = sorted(qs, key=lambda x: x.pub_date, reverse=False)
+        qs = sorted(qs, key=lambda x: x.pub_date, reverse=True)
         # qs.reverse()
         # Filter Posts
         if self.request.META['HTTP_HOST'] == "orangemind.webcomics.io":

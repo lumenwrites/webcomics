@@ -46,10 +46,7 @@ class BrowseMixin(object):
         # Sort
         sorting = self.request.GET.get('sorting')
 
-        if self.request.META['HTTP_HOST'] == "orangemind.webcomics.io":
-            sorting = 'new'
-            qs = qs.order_by('-pub_date')
-            
+
         if sorting == 'top':
             qs = qs.order_by('-score')
         elif sorting == 'new':
