@@ -23,8 +23,7 @@ class Post(models.Model):
     title = models.CharField(max_length=256)
     slug = models.SlugField(max_length=256, default="")
     published = models.BooleanField(default=False, blank=True)
-    pub_date = models.DateTimeField(auto_now_add=True)
-
+    pub_date = models.DateTimeField(blank=True) # auto_now_add=True
     image = models.ImageField(upload_to='comics/', default=None,blank=True, null=True)
     thumbnail = models.ImageField(upload_to='comics/thumbnails/',
                                   default=None,blank=True, null=True)    
@@ -49,6 +48,9 @@ class Post(models.Model):
 
     
     def save(self, slug="", *args, **kwargs):
+        if not self.id:
+            self.pub_date = datetime.datetime.now()
+        
         # Slug
         if slug != "":
             self.slug = slug            
