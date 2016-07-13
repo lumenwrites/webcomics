@@ -52,7 +52,7 @@ class BrowseMixin(object):
         if sorting == 'top':
             qs = qs.order_by('-score')
         elif sorting == 'new':
-            qs = qs.order_by('-pub_date')
+            qs = qs.order_by('pub_date')
         else:
             qs = rank_hot(qs)
 
