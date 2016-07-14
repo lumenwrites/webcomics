@@ -543,6 +543,11 @@ header .row, .subheader .row {
   width: 20%;
   margin: 0;
   float: left;
+
+    width: calc(20% - 1px);
+    margin-right: 1px;
+    margin-bottom: 1px;
+  
 }
 /* line 11, ../sass/_browse.scss */
 #browse-template article img {
@@ -551,8 +556,11 @@ header .row, .subheader .row {
 @media screen and (orientation: portrait) {
   /* line 17, ../sass/_browse.scss */
   #browse-template article {
-    width: calc(33% - 2px);
     width: 33.3333%;
+    width: calc(33% - 1px);
+    margin-right: 1px;
+    margin-bottom: 1px;
+    
   }
   /* line 20, ../sass/_browse.scss */
   #browse-template article img {
