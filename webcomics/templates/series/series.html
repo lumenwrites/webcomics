@@ -32,7 +32,9 @@
 </div>
 {% include "posts/pagination.html" %}
 
+{% if not request.META.HTTP_HOST == "orangemind.webcomics.io" and not  request.META.HTTP_HOST == "localhost:8000" %}  
 {% include "elements/subscribe-popup.html" %}  
+{% endif %}
 
 <style>
   .row {
