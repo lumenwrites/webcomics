@@ -4,7 +4,7 @@
 {% block content %}
 
 
-{% if request.META.HTTP_HOST == "orangemind.webcomics.io" %}  
+{% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" %}  
 {% include "series/orangemind-subheader.html" %}
 {% endif  %}
 
@@ -41,14 +41,18 @@
           <a class="button" href="/post/{{first.slug}}"><< First</a>
           <a class="button" href="/post/{{prev.slug}}">< Prev</a>
           {% else %}
-	  <div class="button invisible"></div>
-	  <div class="button invisible"></div>
+          <a class="button disabled" href="/post/{{first.slug}}"><< First</a>
+          <a class="button disabled" href="/post/{{prev.slug}}">< Prev</a>
           {% endif %}
 
 	  {% if request.META.HTTP_HOST == "orangemind.webcomics.io" %}  	  
           <a class="button series" href="http://orangemind.webcomics.io">
 	    <i class="fi-thumbnails"></i>
 	    Browse</a>
+          {% else %}
+          <a class="button series" href="/series/{{series.slug}}/">
+	    <i class="fi-thumbnails"></i>
+	    {{series.title}}</a>
           {% endif %}
 	  
           {% if post.next_by_author %}
@@ -56,6 +60,9 @@
           <a class="button" href="/post/{{next.slug}}">Next ></a>     	       
           <a class="button" href="/post/{{last.slug}}">Last >></a>
           <!-- </div> -->
+          {% else %}
+          <a class="button disabled" href="/post/{{next.slug}}">Next ></a>     	       
+          <a class="button disabled" href="/post/{{last.slug}}">Last >></a>
           {% endif %}
       </div>
       {% endif %}      
