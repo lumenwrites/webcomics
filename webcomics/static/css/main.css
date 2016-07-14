@@ -557,7 +557,7 @@ header .row, .subheader .row {
   /* line 17, ../sass/_browse.scss */
   #browse-template article {
     width: 33.3333%;
-    width: calc(33% - 1px);
+    width: calc(33.3333% - 1px);
     margin-right: 1px;
     margin-bottom: 1px;
     
