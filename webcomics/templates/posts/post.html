@@ -50,9 +50,9 @@
 	    <i class="fi-thumbnails"></i>
 	    Browse</a>
           {% else %}
-          <a class="button series" href="/series/{{series.slug}}/">
+          <a class="button series" href="/series/{{post.series.slug}}/">
 	    <i class="fi-thumbnails"></i>
-	    {{series.title}}</a>
+	    {{post.series.title}}</a>
           {% endif %}
 	  
           {% if post.next_by_author %}
