@@ -1,5 +1,17 @@
 {% load thumbnail %}
 
+
+      {% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" or post.series.slug == "orangemind"  %}  
+      <div class="callout small post-footer">
+	<p class="left" style="margin-top: 4px;"> Liked this post? Subscribe to the updates! </p>
+	  <div class="right">
+	    <a class="small button" data-open="login-popup">
+	      Subscribe</a>
+	  </div>
+	  <div class="clearfix"></div>
+      </div>
+      {% else  %}      
+
 <div class="callout small post-footer">
 
   <div class="stats">
@@ -37,7 +49,7 @@
         </a>
         {% else %}
 	<a class="small button upvote" data-open="login-popup">
-x	  <i class="fi-arrow-up"></i>Upvote</a>
+	  <i class="fi-arrow-up"></i>Upvote</a>
         {% endif %}	
     {% endif %}    
 
@@ -75,6 +87,7 @@ x	  <i class="fi-arrow-up"></i>Upvote</a>
 More by <a class="" href="/user/{{post.author.username}}">{{post.author}}</a>:
 </div>
 
+      {% endif  %} <!-- endif. orangemind   -->
 <div id="more-by">
 {% for post in more_by %}
   <a href="{{post.get_absolute_url}}">  
