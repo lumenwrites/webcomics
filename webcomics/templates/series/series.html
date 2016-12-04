@@ -47,7 +47,9 @@
 
 {% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" or series.slug == "orangemind"  %}
 <style>
+  .row {
   max-width: 55em!important;
+  }
 </style>
 {% endif  %}
 {% endblock content %}
