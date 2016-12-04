@@ -43,5 +43,11 @@
   max-width: 95%!important;
   }
 </style>
- -->
+-->
+
+{% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" or series.slug == "orangemind"  %}
+<style>
+  max-width: 55em!important;
+</style>
+{% endif  %}
 {% endblock content %}
