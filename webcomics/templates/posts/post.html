@@ -74,11 +74,13 @@
 
       {% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" or post.series.slug == "orangemind"  %}  
       <div class="callout small post-footer">
-	<p> Liked this post? Subscribe to the updates! </p>
+	<p class="left"> Liked this post? Subscribe to the updates! </p>
 	  <div class="right">
 	    <a class="small button" data-open="login-popup">
 	      Subscribe</a>
 	  </div>
+	  <div class="clearfix"></div>
+      </div>
       {% else  %}      
       {% include "posts/footer.html" %}
       {% endif  %}      
