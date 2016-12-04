@@ -45,7 +45,7 @@
           <a class="button disabled" href="/post/{{prev.slug}}">< Prev</a>
           {% endif %}
 
-	  {% if request.META.HTTP_HOST == "orangemind.webcomics.io" %}  	  
+	  {% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" or post.series.slug == "orangemind" %}  	  
           <a class="button series" href="http://orangemind.webcomics.io">
 	    <i class="fi-thumbnails"></i>
 	    Browse</a>
