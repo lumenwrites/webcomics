@@ -4,13 +4,13 @@
     <div class="large-6 small-6 columns">
       <div class="rank-types">
 	<a href="{{request.path}}?sorting=hot{% if category %}&category={{category}}{% endif %}">
-	  <span {% if sorting = "hot" %}class="active"{% endif %}>Hot</span>
+	  <span {% if sorting == "hot" %}class="active"{% endif %}>Hot</span>
 	</a>
 	<a href="{{request.path}}?sorting=new{% if category %}&category={{category}}{% endif %}">
-	  <span {% if sorting = "new" %}class="active"{% endif %}>New</span>
+	  <span {% if sorting == "new" %}class="active"{% endif %}>New</span>
 	</a>
 	<a href="{{request.path}}?sorting=top{% if category %}&category={{category}}{% endif %}">
-	  <span {% if sorting = "top" %}class="active"{% endif %}>Top</span>
+	  <span {% if sorting == "top" %}class="active"{% endif %}>Top</span>
 	</a>	
       </div>
     </div>

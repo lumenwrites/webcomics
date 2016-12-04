@@ -3,7 +3,8 @@
 
 {% block content %}
 
-{% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" %}  
+
+{% if request.META.HTTP_HOST == "orangemind.webcomics.io" or  request.META.HTTP_HOST == "localhost:8000" or series.slug == "orangemind"  %}  
 {% include "series/orangemind-subheader.html" %}
 {% else  %}
 {% include "series/subheader.html" %}
