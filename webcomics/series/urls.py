@@ -19,5 +19,6 @@ urlpatterns = [
     url(r'^series/(?P<slug>[^\.]+)/feed/atom/$', SeriesFeed()),        
     
     url(r'^series/(?P<slug>[^\.]+)$', views.SeriesView.as_view(), name='series-detail'),
+    url(r'^orangemind$', views.SeriesView.as_view(), name='series-detail', {'slug': 'orangemind'}),    
 
 ]
